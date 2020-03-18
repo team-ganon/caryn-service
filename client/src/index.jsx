@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Photos from './components/Photos.jsx';
+import Introduction from './components/Introduction.jsx';
 import $ from 'jquery';
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pictures: []
+      intro: {}
     }
   }
 
   getPhotos () {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3002/api/imgs',
-      success: function(imgs) {
-        console.log('complete searched imgs');
+      url: `http://localhost:3002/api/intro`,
+      success: function(data) {
         this.setState({
-          pictures: imgs
+          intro: data[0]
         })
-      }.bind(this)
+      }.bind(this),
+
     })
   }
 
@@ -29,7 +29,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Photos pictures={this.state.pictures} />
+        <Introduction info={this.state.intro} />
       </div>
     )
   }

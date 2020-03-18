@@ -14,8 +14,10 @@ let listingSchema = mongoose.Schema({
 
 let Listing = mongoose.model('Listing', listingSchema);
 
-let getListing = (callback) => {
-  callback(null, 'https://fec-teamganon-pictures.s3-us-west-1.amazonaws.com/listing1/1-1.jpeg')
+let getListing = (listingNumber, callback) => {
+  Listing.
+    find({listingNumber}).
+    exec(callback)
 }
 
 module.exports.getListing = getListing;
