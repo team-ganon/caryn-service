@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Introduction from './components/Introduction.jsx';
 import $ from 'jquery';
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      intro: {}
+      intro: []
     }
   }
 
@@ -16,7 +18,7 @@ class App extends React.Component {
       url: `http://localhost:3002/api/intro`,
       success: function(data) {
         this.setState({
-          intro: data[0]
+          intro: data
         })
       }.bind(this),
 
@@ -29,7 +31,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Introduction info={this.state.intro} />
+        <Introduction info={this.state.intro}/>
       </div>
     )
   }
