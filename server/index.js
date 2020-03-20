@@ -4,9 +4,9 @@ const {getListing} = require('../database/index.js');
 
 app.use(express.static(__dirname + '/../client/public/dist'));
 
-app.get('/api/:id', function (req, res) {
-  var id = req.params.id;
-  getListing(id, function(err, result) {
+app.get('/api/intro', function (req, res) {
+  // var id = req.params.id;
+  getListing(55, function(err, result) {
     if (err) {
       console.log('fail to get intro')
     } else {
@@ -20,4 +20,4 @@ app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
 
-// var albumBucketName = 'fec-teamganon-pictures';
+
