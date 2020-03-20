@@ -22,19 +22,19 @@
   position: relative;
   text-align: center;
 }
-.column {
+.row {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
-.row {
+.column {
   max-width: 24%;
   padding: 0 4px;
   flex: 25%;
 }
 
-.row img {
+.column img {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
@@ -43,9 +43,10 @@
 
 img {
   width: 200px;
-  height: 400px;
+  height: 200px;
   object-fit: cover;
 }
+
 
 /* Style the Image Used to Trigger the Modal */
 #photos {

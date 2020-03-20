@@ -8,66 +8,81 @@ class Introduction extends React.Component {
     this.state = {
       photos: []
     }
-    this.popUp = this.popUp.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.currentSlide = this.currentSlide.bind(this);
+    this.showSlides = this.showSlides.bind(this);
   }
 
-  popUp(photos) {
-    this.setState({
-      photos: photos[0]
-    })
+  openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
 
-    var modal = document.getElementById('modal');
-    var photos = document.getElementById('photos');
-    var span = document.getElementsByClassName('close');
+  closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
 
-    modal.style.display = "block";
 
-    span.onclick = function() {
-      modal.style.display = 'none';
+  currentSlide(n) {
+    this.showSlides(slideIndex = n);
+  }
+
+  showSlides(n) {
+    var slides = document.getElementsByClassName('mySlides');
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
-
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
+    slides[slideIndex - 1].style.display = "block";
   }
 
 
   render() {
     return (
+    <>
       <div>
         {this.props.info.map((oneInfo, index) => (
           <div key={index}>
-            <div className="column" onClick={() => this.popUp(oneInfo.photos)} id="photos">
-              <div className="row">
-                <img src={oneInfo.photos[0]} />
-                <img src={oneInfo.photos[1]} />
+            <div className="row" id="photos">
+              <div className="column">
+                <img src={oneInfo.photos[0]} onClick={() => this.openModal()}/>
               </div>
-              <div className="row">
-                <img src={oneInfo.photos[4]} />
-                <img src={oneInfo.photos[3]} />
+              <div className="column">
+                <img src={oneInfo.photos[4]} onClick={() => this.openModal()}/>
               </div>
-              <div className="row">
-                <img src={oneInfo.photos[2]} />
-                <img src={oneInfo.photos[1]} />
+              <div className="column">
+                <img src={oneInfo.photos[1]} onClick={() => this.openModal()}/>
               </div>
-              <div className="row">
-                <img src={oneInfo.photos[4]} />
-                <img src={oneInfo.photos[0]} />
+              <div className="column">
+                <img src={oneInfo.photos[4]} onClick={() => this.openModal()}/>
               </div>
             </div>
             <div className="title">{oneInfo.title}</div>
             <div className="description">{oneInfo.description}</div>
           </div>
-        ))}
-        <div id="modal" className="modal">
-          <div className="modal-content">
-            <span className="close">&times;</span>
-              <img src={this.state.photos} />
-          </div>
+            <div id="myModal" className="modal">
+            <span className="close" onClick={() => this.closeModal()}>&times;</span>
+            <div className="modal-content">
+                <div class="mySlides">
+                  <img src={oneInfo.photos[0]} />
+                </div>
+                <div class="mySlides">
+                  <img src={oneInfo.photos[1]} />
+                </div>
+                <div class="mySlides">
+                  <img src={oneInfo.photos[2]} />
+                </div>
+                <div class="mySlides">
+                  <img src={oneInfo.photos[3]} />
+                </div>
+            </div>
+          <a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onClick="plusSlides(-1)">&#10095;</a>
         </div>
+        ))}
       </div>
+    </>
     )
   }
 }
