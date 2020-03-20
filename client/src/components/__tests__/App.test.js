@@ -1,14 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import { Introduction } from '../introduction.jsx'
+import { App } from '../App.jsx'
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 
-describe('Introduction', () => {
-  it('renders without crashing given the required props', () => {
-
-    const wrapper = shallow(<Introduction {...props} />)
-    expect(toJson(wrapper)).toMatchSnapshot()
+describe('App', () => {
+  it('see if jest works', () => {
+    const wrapper = shallow(<App />)
+    expect(wrapper).toMatchSnapshot();
   })
 })
 

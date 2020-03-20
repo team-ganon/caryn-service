@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Introduction from './components/Introduction.jsx';
+import Introduction from './Introduction.jsx';
 import $ from 'jquery';
 
 
@@ -37,6 +37,6 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));
 
 export {App};
