@@ -10,23 +10,25 @@ class App extends React.Component {
     this.state = {
       intro: []
     }
+    this.getPhotos = this.getPhotos.bind(this);
   }
 
-  getPhotos () {
+  getPhotos (endPoint) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:3002/api/intro`,
+      url: `http://localhost:3002/api/${endPoint}`,
       success: function(data) {
+        // console.log('in success')
         this.setState({
           intro: data
         })
-      }.bind(this),
-
+      }.bind(this)
     })
   }
 
   componentDidMount () {
-    this.getPhotos();
+    var endPoint = window.location.href.split('api/');
+    this.getPhotos(endPoint);
   }
   render () {
     return (
