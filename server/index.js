@@ -5,7 +5,7 @@ const {getListing} = require('../database/index.js');
 app.use(express.static(__dirname + '/../client/public/dist'));
 
 app.get('/api/intro', function (req, res) {
-  getListing(56, function(err, result) {
+  getListing(55, function(err, result) {
     if (err) {
       console.log('fail to get pictures')
     } else {
