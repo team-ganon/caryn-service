@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       intro: []
     }
-    this.getPhotos = this.getPhotos.bind(this);
   }
 
   getPhotos () {
@@ -18,16 +17,15 @@ class App extends React.Component {
       method: 'GET',
       url: `http://localhost:3002/api/intro`,
       success: function(data) {
-        // console.log('in success')
         this.setState({
           intro: data
         })
-      }.bind(this)
+      }.bind(this),
+
     })
   }
 
   componentDidMount () {
-    // var endPoint = window.location.href.split('api/');
     this.getPhotos();
   }
   render () {
@@ -38,7 +36,6 @@ class App extends React.Component {
     )
   }
 }
-
-// ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
 
 export {App};

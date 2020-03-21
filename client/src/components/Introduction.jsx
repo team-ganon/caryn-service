@@ -1,88 +1,118 @@
 import React from 'react';
-import Img from 'react-image';
-import Gallery from 'react-photo-gallery';
+
 
 class Introduction extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: []
+      photos: '',
+      pictures: []
     }
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.currentSlide = this.currentSlide.bind(this);
-    this.showSlides = this.showSlides.bind(this);
+
   }
 
-  openModal() {
-    document.getElementById("myModal").style.display = "block";
-  }
+  openModal(url, pictures) {
+    this.setState({
+      photos: url,
+      pictures: pictures
+    })
 
-  closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName('close')[0];
 
+    modal.style.display = 'block';
+
+    span.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  }
 
   currentSlide(n) {
     this.showSlides(slideIndex = n);
   }
 
   showSlides(n) {
-    var slides = document.getElementsByClassName('mySlides');
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (var i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    var currentSlide = this.state.photos;
+    var currentIndex = this.state.pictures.indexOf(currentSlide);
+    var nextIndex = currentIndex + n;
+    if (nextIndex >= this.state.pictures.length) {
+      var nextSlide = this.state.pictures[0];
+      this.setState({
+        photos: nextSlide
+      });
+    } else if (nextIndex < 0) {
+      nextSlide = this.state.pictures[this.state.pictures.length - 1];
+      this.setState({
+        photos: nextSlide
+      });
+    } else {
+      nextSlide = this.state.pictures[nextIndex];
+      this.setState({
+        photos: nextSlide
+      });
     }
-    slides[slideIndex - 1].style.display = "block";
   }
-
 
   render() {
     return (
-    <>
       <div>
         {this.props.info.map((oneInfo, index) => (
           <div key={index}>
             <div className="row" id="photos">
               <div className="column">
-                <img src={oneInfo.photos[0]} onClick={() => this.openModal()}/>
+                <img src={oneInfo.photos[0]} onClick={() => this.openModal(oneInfo.photos[0], oneInfo.photos)} />
               </div>
               <div className="column">
-                <img src={oneInfo.photos[4]} onClick={() => this.openModal()}/>
+                <img src={oneInfo.photos[4]} onClick={() => this.openModal(oneInfo.photos[4], oneInfo.photos)} />
               </div>
               <div className="column">
-                <img src={oneInfo.photos[1]} onClick={() => this.openModal()}/>
+                <img src={oneInfo.photos[1]} onClick={() => this.openModal(oneInfo.photos[1], oneInfo.photos)} />
               </div>
               <div className="column">
-                <img src={oneInfo.photos[4]} onClick={() => this.openModal()}/>
+                <img src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
             </div>
             <div className="title">{oneInfo.title}</div>
             <div className="description">{oneInfo.description}</div>
           </div>
-            <div id="myModal" className="modal">
-            <span className="close" onClick={() => this.closeModal()}>&times;</span>
-            <div className="modal-content">
-                <div class="mySlides">
-                  <img src={oneInfo.photos[0]} />
-                </div>
-                <div class="mySlides">
-                  <img src={oneInfo.photos[1]} />
-                </div>
-                <div class="mySlides">
-                  <img src={oneInfo.photos[2]} />
-                </div>
-                <div class="mySlides">
-                  <img src={oneInfo.photos[3]} />
-                </div>
-            </div>
-          <a class="prev" onClick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onClick="plusSlides(-1)">&#10095;</a>
-        </div>
         ))}
+        <div id="myModal" className="modal">
+           <span className="close">&times;</span>
+           <div className="modal-content">
+              <img src={this.state.photos} />
+
+              <div className="mySlide">
+                <div className="numbertext">1 / 5</div>
+                <img src={this.state.pictures[0]} style={{display: 'none'}}/>
+              </div>
+              <div className="mySlide">
+                <div className="numbertext">2 / 5</div>
+                <img src={this.state.pictures[1]} style={{display: 'none'}}/>
+              </div>
+              <div className="mySlide">
+                <div className="numbertext">3 / 5</div>
+                <img src={this.state.pictures[2]} style={{display: 'none'}}/>
+              </div>
+              <div className="mySlide">
+                <div className="numbertext">4 / 5</div>
+                <img src={this.state.pictures[3]} style={{display: 'none'}}/>
+              </div>
+              <div className="mySlide">
+                <div className="numbertext">5 / 5</div>
+                <img src={this.state.pictures[4]} style={{display: 'none'}}/>
+              </div>
+
+              <a className="prev" onClick={() => this.showSlides(-1)}>&#10094;</a>
+              <a className="next" onClick={() => this.showSlides(1)}>&#10095;</a>
+            </div>
+        </div>
       </div>
-    </>
     )
   }
 }
