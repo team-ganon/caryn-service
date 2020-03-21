@@ -33,10 +33,6 @@ class Introduction extends React.Component {
     }
   }
 
-  currentSlide(n) {
-    this.showSlides(slideIndex = n);
-  }
-
   showSlides(n) {
     var currentSlide = this.state.photos;
     var currentIndex = this.state.pictures.indexOf(currentSlide);
@@ -86,28 +82,6 @@ class Introduction extends React.Component {
            <span className="close">&times;</span>
            <div className="modal-content">
               <img src={this.state.photos} />
-
-              <div className="mySlide">
-                <div className="numbertext">1 / 5</div>
-                <img src={this.state.pictures[0]} style={{display: 'none'}}/>
-              </div>
-              <div className="mySlide">
-                <div className="numbertext">2 / 5</div>
-                <img src={this.state.pictures[1]} style={{display: 'none'}}/>
-              </div>
-              <div className="mySlide">
-                <div className="numbertext">3 / 5</div>
-                <img src={this.state.pictures[2]} style={{display: 'none'}}/>
-              </div>
-              <div className="mySlide">
-                <div className="numbertext">4 / 5</div>
-                <img src={this.state.pictures[3]} style={{display: 'none'}}/>
-              </div>
-              <div className="mySlide">
-                <div className="numbertext">5 / 5</div>
-                <img src={this.state.pictures[4]} style={{display: 'none'}}/>
-              </div>
-
               <a className="prev" onClick={() => this.showSlides(-1)}>&#10094;</a>
               <a className="next" onClick={() => this.showSlides(1)}>&#10095;</a>
             </div>
