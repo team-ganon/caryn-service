@@ -74,8 +74,9 @@ class Introduction extends React.Component {
                 <img src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
             </div>
-            <div className="title">{oneInfo.title}</div>
-            <div className="description">{oneInfo.description}</div>
+            <h2 className="title">{oneInfo.title}</h2>
+            <div className="borderline"></div>
+            <p className="description">{oneInfo.description}</p>
           </div>
         ))}
         <div id="myModal" className="modal">
