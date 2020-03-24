@@ -32,8 +32,6 @@ class App extends React.Component {
     return (
       <div>
         <Introduction info={this.state.intro}/>
-        <h3 className="Amenities">Amenities</h3>
-        <h3 className="sleeping">Sleeping arrangements</h3>
       </div>
     )
   }
