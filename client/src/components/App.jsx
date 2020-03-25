@@ -15,7 +15,7 @@ class App extends React.Component {
   getPhotosAndIntro () {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:3002/api/intro`,
+      url: `http://3.101.45.223:3002/api/intro`,
       success: function(data) {
         this.setState({
           intro: data
