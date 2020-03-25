@@ -12,7 +12,7 @@ class App extends React.Component {
     }
   }
 
-  getPhotos () {
+  getPhotosAndIntro () {
     $.ajax({
       method: 'GET',
       url: `http://localhost:3002/api/intro`,
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getPhotos();
+    this.getPhotosAndIntro();
   }
   render () {
     return (

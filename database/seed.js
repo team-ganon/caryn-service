@@ -15,8 +15,20 @@ var seed = function() {
     listing.title = faker.lorem.sentence();
     listing.description = faker.lorem.paragraph();
     // listing.advantages = [];
-    // listing.amenities = {};
+    // for (var i = 0; i < 5; i++) {
+    //   var sentence = faker.lorem.sentence();
+    //   listing.advantages.push(sentence);
+    // }
+    // listing.amenities = [];
+    // for (var i = 0; i < 10; i++) {
+    //   var amenity = faker.lorem.word();
+    //   listing.amenities.push(amenity);
+    // }
     // listing.sleeping = [];
+    // for (var i = 0; i < 3; i++) {
+    //   var arrangement = faker.lorem.words();
+    //   listing.sleeping.push(arrangement);
+    // }
     listing.photos = [];
     var params = {
       Bucket: bucketName,
