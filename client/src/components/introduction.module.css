@@ -1,4 +1,4 @@
-.grid-container {
+.gridContainer {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 5px;
@@ -6,56 +6,56 @@
   height: 400px;
 }
 
-.grid-container > div {
+.gridContainer > div {
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   overflow: hidden;
 }
 
-.grid-container-2 {
+.gridContainer2 {
   display: grid;
   grid-template-rows: auto auto auto;
   width: 60%;
 }
 
-.grid-container-3 {
+.gridContainer3 {
   display: grid;
   grid-template-columns: 5% auto;
 }
 
-.grid-container-3 i {
+.gridContainer3 i {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.grid-container-4 {
+.gridContainer4 {
   display:grid;
   grid-template-columns: 5% auto 5% auto;
 }
 
-.grid-container-4 h4 {
+.gridContainer4 h4 {
   grid-column-start: 1;
   grid-column-end: 5;
 }
 
-.grid-container-4 i {
+.gridContainer4 i {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.grid-container-5 {
+.gridContainer5 {
   display: grid;
   grid-auto-rows: auto auto;
 }
 
-.grid-container-6 {
+.gridContainer6 {
   display: grid;
   text-align: center;
 }
 
-.grid-container-6 {
+.gridContainer6 {
   width: 200px;
   height: 200px;
   padding: 24px;
@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-h2.title {
+.title {
   overflow-wrap: break-word;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 32px;
@@ -82,7 +82,7 @@ h2.title {
   border-bottom: 1px solid grey;
 }
 
-p.description {
+.description {
   overflow-wrap: break-word;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 16px;
@@ -105,12 +105,6 @@ p.description {
   overflow: hidden;
 }
 
-/* .column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  flex-wrap: wrap;
-}*/
 
 img {
   width: 100%;
@@ -120,7 +114,6 @@ img {
 
 
 #photos {
-  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -142,7 +135,7 @@ img {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.modal-content img{
+.modalContent img{
   margin: auto;
   display: block;
   width: 100%;

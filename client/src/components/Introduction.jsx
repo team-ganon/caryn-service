@@ -1,4 +1,6 @@
 import React from 'react';
+import css from './introduction.module.css';
+import styleable from 'react-styleable';
 
 
 class Introduction extends React.Component {
@@ -17,8 +19,8 @@ class Introduction extends React.Component {
       pictures: pictures
     })
 
-    var modal = document.getElementById('myModal');
-    var span = document.getElementsByClassName('close')[0];
+    var modal = document.getElementById('modal');
+    var span = document.getElementById('close');
 
     modal.style.display = 'block';
 
@@ -56,53 +58,54 @@ class Introduction extends React.Component {
   }
 
   render() {
+    const style = this.props.css;
     return (
       <div>
         {this.props.info.map((oneInfo, index) => (
           <div key={index}>
-            <div className="grid-container" id="photos">
-              <div className="pic1">
+            <div className={style.gridContainer} id={style.photos}>
+              <div className={style.pic1}>
                 <img src={oneInfo.photos[0]} onClick={() => this.openModal(oneInfo.photos[0], oneInfo.photos)} />
               </div>
-              <div className="pic2">
+              <div className={style.pic2}>
                 <img src={oneInfo.photos[4]} onClick={() => this.openModal(oneInfo.photos[4], oneInfo.photos)} />
               </div>
-              <div className="pic3">
+              <div className={style.pic3}>
                 <img src={oneInfo.photos[1]} onClick={() => this.openModal(oneInfo.photos[1], oneInfo.photos)} />
               </div>
-              <div className="pic4">
+              <div className={style.pic4}>
                 <img src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
-              <div className="pic5">
+              <div className={style.pic5}>
                 <img src={oneInfo.photos[3]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
             </div>
-            <div className="grid-container-2">
-            <h2 className="title">{oneInfo.title}</h2>
-            <div className="grid-container-3">
-              <i className="fas fa-home"></i>
+            <div className={style.gridContainer2}>
+            <h2 className={style.title}>{oneInfo.title}</h2>
+            <div className={style.gridContainer3}>
+              <i class="fas fa-home"></i>
                 <p>Private room in house</p>
-              <i className="fas fa-spray-can"></i>
+              <i class="fas fa-spray-can"></i>
                 <p>Sparkling clean</p>
-              <i className="fas fa-map-marker-alt"></i>
+              <i class="fas fa-map-marker-alt"></i>
                 <p>Great location</p>
             </div>
-            <p className="description">{oneInfo.description}</p>
-            <div className="grid-container-4">
+            <p className={style.description}>{oneInfo.description}</p>
+            <div className={style.gridContainer4}>
               <h4>Amenities</h4>
-              <i className="fas fa-wifi"></i>
+              <i class="fas fa-wifi"></i>
               <p>Wifi</p>
-              <i className="fas fa-parking"></i>
+              <i class="fas fa-parking"></i>
               <p>Free parking</p>
-              <i className="fas fa-swimming-pool"></i>
+              <i class="fas fa-swimming-pool"></i>
               <p>Pool</p>
-              <i className="fas fa-tv"></i>
+              <i class="fas fa-tv"></i>
               <p>Cable TV</p>
             </div>
-            <div className="grid-container-5">
+            <div className={style.gridContainer5}>
               <h4>Sleeping Arrangements</h4>
-              <div className="grid-container-6">
-              <i className="fas fa-bed"></i><i className="fas fa-bed"></i>
+              <div className={style.gridContainer6}>
+              <i class="fas fa-bed"></i><i class="fas fa-bed"></i>
               <h5>Bedroom 1</h5>
               <p>2 single beds</p>
               </div>
@@ -110,12 +113,12 @@ class Introduction extends React.Component {
             </div>
           </div>
         ))}
-        <div id="myModal" className="modal">
-           <span className="close">&times;</span>
-           <div className="modal-content">
+        <div className={style.modal} id="modal">
+           <span className={style.close} id="close">&times;</span>
+           <div className={style.modalContent}>
               <img src={this.state.photos} />
-              <a className="prev" onClick={() => this.showSlides(-1)}>&#10094;</a>
-              <a className="next" onClick={() => this.showSlides(1)}>&#10095;</a>
+              <a className={style.prev} onClick={() => this.showSlides(-1)}>&#10094;</a>
+              <a className={style.next} onClick={() => this.showSlides(1)}>&#10095;</a>
             </div>
         </div>
       </div>
@@ -123,6 +126,6 @@ class Introduction extends React.Component {
   }
 }
 
-export default Introduction;
+export default styleable(css)(Introduction);
 
 export {Introduction};

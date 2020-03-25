@@ -15,7 +15,23 @@ module.exports = {
         exclude: /node_modules/,
         include : SRC_DIR,
         loader : 'babel-loader'
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+             loader: 'style-loader',
+          },
+          {
+             loader: 'css-loader',
+             options: {
+                modules: {
+                  localIdentName: '[local]___[hash:base64:5]'
+                }
+             }
+          }
+        ],
+       }
     ]
   }
 };

@@ -2,7 +2,8 @@
 
 exports[`App see if jest works 1`] = `
 <div>
-  <Introduction
+  <Styleable(Introduction)
+    css={Object {}}
     info={Array []}
   />
 </div>
