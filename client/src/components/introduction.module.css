@@ -15,7 +15,7 @@
 .gridContainer2 {
   display: grid;
   grid-template-rows: auto auto auto;
-  width: 60%;
+  width: 40%;
 }
 
 .gridContainer3 {
@@ -51,17 +51,16 @@
 }
 
 .gridContainer6 {
-  display: grid;
   text-align: center;
-}
-
-.gridContainer6 {
-  width: 200px;
-  height: 200px;
-  padding: 24px;
-  border: 1px solid grey;
-  box-sizing: border-box;
-  align-items: center;
+  width: 150px !important;
+  height: 150px !important;
+  display: grid;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgb(235, 235, 235) !important;
+  border-image: initial !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
 }
 
 .title {
@@ -78,8 +77,7 @@
   text-align: left;
   float: left;
   padding: 4px;
-  width: 60%;
-  border-bottom: 1px solid grey;
+  width: 100%;
 }
 
 .description {
@@ -94,7 +92,7 @@
   float: left;
   padding: 4px;
   box-sizing: border-box;
-  width: 60%;
+  width: 100%;
 }
 
 
@@ -199,4 +197,61 @@ img.demo {
 
 img.hover-shadow {
   transition: 0.3s;
+}
+
+.line {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-bottom-width: 1px !important;
+  border-bottom-color: #c4c3cd !important;
+  border-bottom-style: solid !important;
+}
+
+h4,h5 {
+  overflow-wrap: break-word !important;
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.375em !important;
+  color: rgb(72, 72, 72) !important;
+}
+
+.gridContainer6 p{
+  overflow-wrap: break-word !important;
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.375em !important;
+  color: rgb(72, 72, 72) !important;
+  margin: 0px !important;
+}
+
+.gridContainer3 p {
+  overflow-wrap: break-word !important;
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.375em !important;
+  color: rgb(72, 72, 72) !important;
+  margin-top: 16px
+}
+
+.gridContainer4 p {
+  overflow-wrap: break-word !important;
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.375em !important;
+  color: rgb(72, 72, 72) !important;
+  margin-bottom: 16px
+}
+
+.gridContainer4 .line{
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gridContainer5 i {
+  align-items: center;
+  margin-bottom: 24px;
 }

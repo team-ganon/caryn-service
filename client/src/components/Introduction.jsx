@@ -90,8 +90,10 @@ class Introduction extends React.Component {
               <i class="fas fa-map-marker-alt"></i>
                 <p>Great location</p>
             </div>
+            <div className={style.line}></div>
             <p className={style.description}>{oneInfo.description}</p>
             <div className={style.gridContainer4}>
+              <div className={style.line}></div>
               <h4>Amenities</h4>
               <i class="fas fa-wifi"></i>
               <p>Wifi</p>
@@ -103,9 +105,10 @@ class Introduction extends React.Component {
               <p>Cable TV</p>
             </div>
             <div className={style.gridContainer5}>
+            <div className={style.line}></div>
               <h4>Sleeping Arrangements</h4>
               <div className={style.gridContainer6}>
-              <i class="fas fa-bed"></i><i class="fas fa-bed"></i>
+              <i class="fas fa-bed"></i>
               <h5>Bedroom 1</h5>
               <p>2 single beds</p>
               </div>
