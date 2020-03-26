@@ -7,9 +7,9 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/../client/public/dist'));
 
-app.get('/api/intro', function (req, res) {
-  // var id = req.params.id;
-  getListing(56, function(err, result) {
+app.get('/api/intro/:id', function (req, res) {
+  var id = req.params.id;
+  getListing(id, function(err, result) {
     if (err) {
       console.log('fail to get intro')
     } else {
