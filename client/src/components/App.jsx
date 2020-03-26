@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Introduction from './Introduction.jsx';
 import $ from 'jquery';
-import './introduction.module.css';
 
 class App extends React.Component {
   constructor(props) {

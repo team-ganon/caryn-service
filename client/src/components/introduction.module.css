@@ -16,6 +16,7 @@
   display: grid;
   grid-template-rows: auto auto auto;
   width: 40%;
+  margin-left: 10vw;
 }
 
 .gridContainer3 {
@@ -104,7 +105,7 @@
 }
 
 
-img {
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -187,7 +188,7 @@ img {
 }
 
 
-img.demo {
+.img.demo {
   opacity: 0.6;
 }
 
@@ -195,7 +196,7 @@ img.demo {
   opacity: 1;
 }
 
-img.hover-shadow {
+.img.hover-shadow {
   transition: 0.3s;
 }
 
@@ -207,7 +208,7 @@ img.hover-shadow {
   border-bottom-style: solid !important;
 }
 
-h4,h5 {
+.gridContainer4 h4, .gridContainer5 h5 {
   overflow-wrap: break-word !important;
   font-family: "Helvetica Neue", sans-serif !important;
   font-size: 16px !important;

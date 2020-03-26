@@ -65,19 +65,19 @@ class Introduction extends React.Component {
           <div key={index}>
             <div className={style.gridContainer} id={style.photos}>
               <div className={style.pic1}>
-                <img src={oneInfo.photos[0]} onClick={() => this.openModal(oneInfo.photos[0], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[0]} onClick={() => this.openModal(oneInfo.photos[0], oneInfo.photos)} />
               </div>
               <div className={style.pic2}>
-                <img src={oneInfo.photos[4]} onClick={() => this.openModal(oneInfo.photos[4], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[4]} onClick={() => this.openModal(oneInfo.photos[4], oneInfo.photos)} />
               </div>
               <div className={style.pic3}>
-                <img src={oneInfo.photos[1]} onClick={() => this.openModal(oneInfo.photos[1], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[1]} onClick={() => this.openModal(oneInfo.photos[1], oneInfo.photos)} />
               </div>
               <div className={style.pic4}>
-                <img src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
               <div className={style.pic5}>
-                <img src={oneInfo.photos[3]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[3]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
             </div>
             <div className={style.gridContainer2}>
