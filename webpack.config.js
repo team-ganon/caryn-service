@@ -3,7 +3,7 @@ var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, 'client/public/dist');
 
 module.exports = {
-  entry: `./client/src/components/index.jsx`,
+  entry: `./client/src/components/Index.jsx`,
   output: {
     filename: 'app.js',
     path: DIST_DIR
