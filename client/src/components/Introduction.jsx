@@ -77,7 +77,7 @@ class Introduction extends React.Component {
                 <img className={style.img} src={oneInfo.photos[2]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
               </div>
               <div className={style.pic5}>
-                <img className={style.img} src={oneInfo.photos[3]} onClick={() => this.openModal(oneInfo.photos[2], oneInfo.photos)} />
+                <img className={style.img} src={oneInfo.photos[3]} onClick={() => this.openModal(oneInfo.photos[3], oneInfo.photos)} />
               </div>
             </div>
             <div className={style.gridContainer2}>
