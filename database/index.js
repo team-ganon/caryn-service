@@ -6,10 +6,7 @@ let listingSchema = mongoose.Schema({
   listingNumber: { type: Number, unique: true, dropDuos: true},
   photos: Array,
   title: String,
-  advantages: Array,
-  description: String,
-  amenities: Object,
-  Sleeping: Array
+  description: String
 })
 
 let Listing = mongoose.model('Listing', listingSchema);
