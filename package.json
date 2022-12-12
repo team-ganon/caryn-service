@@ -22,7 +22,7 @@
     "cors": "^2.8.5",
     "css-loader": "^3.4.2",
     "es6": "0.0.7",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faker": "^4.1.0",
     "jest": "^25.1.0",
     "jest-css-modules": "^2.1.0",
